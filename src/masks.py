@@ -1,10 +1,12 @@
 # Функция маскировки номера карты
-def get_mask_card_number(card_number: int) -> str:
+def get_mask_card_number(card_number: str) -> str:
     """Функция маскирует номер карты клиента"""
-    return f"{card_number[0:4]} {card_number[4:6]}** **** {card_number[-4:]}"
+    card_number_clear = "".join(filter(str.isdigit, card_number))
+    return f"{card_number_clear[0:4]} {card_number_clear[4:6]}** **** {card_number_clear[-4:]}"
 
 
 # Функция маскировки номера счета
-def get_mask_account(account_number: int) -> str:
+def get_mask_account(account_number: str) -> str:
     """Функция маскирует номер счёта клиента"""
-    return f"**{account_number[-4:]}"
+    account_number_clear = "".join(filter(str.isdigit, account_number))
+    return f"**{account_number_clear[-4:]}"
