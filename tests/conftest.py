@@ -38,7 +38,7 @@ def mask_account_test():
 # Зона для тестирования даты
 @pytest.fixture()
 def coll_data():
-    return ['2024-03-11T02:26:18.671407']
+    return '2024-03-11T02:26:18.671407'
 
 @pytest.fixture()
 def mask_data_test():
