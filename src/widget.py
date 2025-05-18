@@ -2,11 +2,13 @@
 
 from src.masks import get_mask_account, get_mask_card_number
 
-def find_first_digit(account_card:str) -> int:
+
+def find_first_digit(account_card: str) -> int:
     for i, char in enumerate(account_card):
-         if char.isdigit():
+        if char.isdigit():
             return i
     return -1
+
 
 def mask_account_card(account_card: str) -> str:
     """Функция маскирует номер счета или карты в зависимости от предоставленных данных"""
@@ -14,12 +16,12 @@ def mask_account_card(account_card: str) -> str:
 
     i = find_first_digit(account_card)
     if len(number_account_card) > 16:
-        if account_card[:i][-1] == ' ':
+        if account_card[:i][-1] == " ":
             return f"{account_card[:i-1]} {get_mask_account(number_account_card)}"
         else:
             return f"{account_card[:i]} {get_mask_account(number_account_card)}"
     else:
-        if account_card[:i][-1] == ' ':
+        if account_card[:i][-1] == " ":
             return f"{account_card[:i-1]} {get_mask_card_number(number_account_card)}"
         else:
             return f"{account_card[:i]} {get_mask_card_number(number_account_card)}"
