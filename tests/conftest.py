@@ -14,12 +14,12 @@ def coll_card():
 
 
 @pytest.fixture()
-def mask_card_number_test():
+def mask_card_number_answer():
     return "7000 79** **** 6361"
 
 
 @pytest.fixture()
-def mask_card_test():
+def mask_card_answer():
     return "Visa Platinum 7000 79** **** 6361"
 
 
@@ -36,12 +36,12 @@ def coll_account():
 
 
 @pytest.fixture()
-def mask_account_number_test():
+def mask_account_number_answer():
     return "**4305"
 
 
 @pytest.fixture()
-def mask_account_test():
+def mask_account_answer():
     return "Счет **4305"
 
 
@@ -52,7 +52,7 @@ def coll_data():
 
 
 @pytest.fixture()
-def mask_data_test():
+def mask_data_answer():
     return "11.03.2024"
 
 
@@ -68,7 +68,7 @@ def coll_sort():
 
 
 @pytest.fixture()
-def sort_state_executed_test():
+def sort_state_executed_answer():
     return [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
         {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
@@ -76,7 +76,7 @@ def sort_state_executed_test():
 
 
 @pytest.fixture()
-def sort_state_canceled_test():
+def sort_state_canceled_answer():
     return [
         {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
         {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
@@ -84,7 +84,7 @@ def sort_state_canceled_test():
 
 
 @pytest.fixture()
-def sort_data_test():
+def sort_data_answer():
     return [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
         {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
