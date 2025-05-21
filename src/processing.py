@@ -9,7 +9,8 @@ def filter_by_state(transactions: List[Dict[str, Any]], state: str = "EXECUTED")
 
 # Функция сортировки по дате
 def sort_by_date(transactions: List[Dict[str, Any]], descending: bool = True) -> List[Dict[str, Any]]:
-    """Функция сортирует и возвращает список транзакций по дате в обратном порядке. Первыми идут более свежие операции"""
+    """Функция сортирует и возвращает список транзакций по дате в обратном порядке.
+    Первыми идут более свежие операции"""
 
     def get_date(transaction: Dict[str, Any]) -> str:
         return transaction.get("date", "")
