@@ -4,16 +4,7 @@ from src.widget import get_date, mask_account_card
 from tests.conftest import mask_data_answer
 
 
-# def test_mask_account_card_1(coll_card, mask_card_answer):
-#     for card in coll_card:
-#         assert mask_account_card(card) == mask_card_answer
-#
-#
-# def test_mask_account_card_2(coll_account, mask_account_answer):
-#     for account in coll_account:
-#         assert mask_account_card(account) == mask_account_answer
-#
-#
+
 def test_get_date(coll_data, mask_data_answer):
     assert get_date(coll_data) == mask_data_answer
 
