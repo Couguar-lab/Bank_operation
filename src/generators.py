@@ -11,7 +11,7 @@ def filter_by_currency(transactions, currency):
     """
     for transaction in transactions:
         try:
-            if transaction['operationAmount']['currency']['code'] == currency:
+            if transaction["operationAmount"]["currency"]["code"] == currency:
                 yield transaction
         except (KeyError, TypeError):
             continue  # Пропускаем транзакции с некорректной структурой
@@ -29,9 +29,9 @@ def transaction_descriptions(transactions):
     """
     for transaction in transactions:
         try:
-            yield transaction['description']
+            yield transaction["description"]
         except (KeyError, TypeError):
-            yield 'Описание отсутствует'
+            yield "Описание отсутствует"
 
 
 def card_number_generator(start, end):
