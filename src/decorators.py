@@ -1,4 +1,3 @@
-# src/decorators.py
 import logging
 from functools import wraps
 from typing import Callable, Optional, ParamSpec, TypeVar
