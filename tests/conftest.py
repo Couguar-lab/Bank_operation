@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pytest
 
 
@@ -143,12 +145,6 @@ def transactions():
             "to": "Счет 14211924144426031657",
         },
     ]
-
-
-from pathlib import Path
-
-# tests/conftest.py
-import pytest
 
 
 @pytest.fixture

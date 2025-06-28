@@ -1,6 +1,5 @@
 import logging  # Добавляем импорт logging
 import os
-from typing import Optional
 
 import pytest
 
