@@ -1,7 +1,6 @@
 import pytest
 
 from src.widget import get_date, mask_account_card
-from tests.conftest import mask_data_answer
 
 
 def test_get_date(coll_data, mask_data_answer):

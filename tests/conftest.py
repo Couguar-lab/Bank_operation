@@ -1,3 +1,6 @@
+from pathlib import Path
+
+import pandas as pd
 import pytest
 
 
@@ -145,13 +148,37 @@ def transactions():
     ]
 
 
-from pathlib import Path
-
-# tests/conftest.py
-import pytest
-
-
 @pytest.fixture
 def temp_log_file(tmp_path: Path) -> Path:
     """Создаёт временный файл для логов."""
     return tmp_path / "test_log.txt"
+
+
+@pytest.fixture
+def sample_csv_data():
+    """Фикстура для имитации CSV-данных."""
+    return (
+        "id;state;date;amount;currency_name;currency_code;from;to;description\n"
+        "650703;EXECUTED;2023-09-05T11:30:32Z;16210;Sol;PEN;Счет 58803664561298323391;"
+        "Счет 39745660563456619397;Перевод организации\n"
+        "3598919;EXECUTED;2020-12-06T23:00:58Z;29740;Peso;COP;Discover 3172601889670065;"
+        "Discover 0720428384694643;Перевод с карты на карту"
+    )
+
+
+@pytest.fixture
+def sample_excel_data():
+    """Фикстура для имитации Excel-данных."""
+    return pd.DataFrame(
+        {
+            "id": ["650703", "3598919"],
+            "state": ["EXECUTED", "EXECUTED"],
+            "date": ["2023-09-05T11:30:32Z", "2020-12-06T23:00:58Z"],
+            "amount": [16210, 29740],
+            "currency_name": ["Sol", "Peso"],
+            "currency_code": ["PEN", "COP"],
+            "from": ["Счет 58803664561298323391", "Discover 3172601889670065"],
+            "to": ["Счет 39745660563456619397", "Discover 0720428384694643"],
+            "description": ["Перевод организации", "Перевод с карты на карту"],
+        }
+    )
