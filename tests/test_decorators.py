@@ -1,4 +1,3 @@
-# tests/test_decorators.py
 import logging  # Добавляем импорт logging
 import os
 
