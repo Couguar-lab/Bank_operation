@@ -1,7 +1,5 @@
-# tests/test_decorators.py
 import logging  # Добавляем импорт logging
 import os
-from typing import Optional
 
 import pytest
 
@@ -89,5 +87,3 @@ def test_log_with_kwargs(temp_log_file):
 
     result = greet("Alice", greeting="Hi")
     assert result == "Hi, Alice!"
-
-    logs = read_log_file
